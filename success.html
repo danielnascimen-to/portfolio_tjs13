@@ -1,50 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Daniel Nascimento">
-  <meta name="description" content="Mensagem enviada com sucesso.">
-  <meta name="robots" content="index, follow">
+  <head>
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg">
-  <title>Portfólio do Daniel</title>
-</head>
-<body>
-  <header>
-    <a href="index.html" id="titulo">Portfólio</a>
-    <nav>
-      <ul class="menu-list">
-        <li><a href="index.html#hero">Início</a></li>
-        <li><a href="index.html#about">Sobre</a></li>
-        <li><a href="index.html#projects">Projetos</a></li>
-        <li><a href="index.html#contact">Contatos</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <section id="success" class="section-container success-container">
-      <article class="success-content">
-        
-        <figure class="success-image">
-          <img src="./assets/img/success.svg" alt="Ícone de sucesso">
-        </figure>
+    <!-- Fonte do Google - Poppins -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
 
-        <h1>E-mail enviado com sucesso!</h1>
-        <p>Obrigado por entrar em contato!</p>
-        <p>Logo mais retornarei a sua mensagem.</p>
-        
-        <div class="buttons-container">
-          <a href="index.html" target="_self" class="botao">Voltar para o início</a>
-        </div>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Daniel Nascimento" />
+    <meta
+      name="description"
+      content="Portfólio Pessoal do Daniel Nascimento, 
+                desenvolvedor Full Stack especializado em criar experiências 
+                digitais incríveis. Conheça meus projetos e entre em contato."
+    />
+    <meta name="robots" content="index, follow" />
 
-      </article>
-    </section>
-  </main>
-  <footer>
-    <p>
-      Desenvolvido por Daniel Nascimento
-    </p>
-  </footer>
-</body>
+    <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg" />
+
+    <!-- CSS principal da página -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>Portfólio do Daniel</title>
+  </head>
+
+  <body>
+    <!-- Cabeçalho da Página (header) -->
+    <header class="menu-container">
+      <div class="menu-content">
+        <a href="index.html" id="titulo">Portfólio</a>
+
+        <nav>
+          <ul class="menu-list">
+            <li><a href="index.html#hero">Início</a></li>
+            <li><a href="index.html#about">Sobre</a></li>
+            <li><a href="index.html#projects">Projetos</a></li>
+            <li><a href="index.html#contact">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Seção Principal da Página (main) -->
+    <main>
+      <!-- Mensagem de Sucesso -->
+      <section class="success-container">
+        <article class="success-content">
+          <figure class="success-icon">
+            <img
+              src="./assets/img/success.svg"
+              alt="Ilustração de sucesso"
+              class="float-animation"
+              width="20%"
+            />
+          </figure>
+
+          <h1>E-mail enviado com Sucesso!</h1>
+          <h2>
+            Obrigado por entrar em contato! <br />
+            Logo mais retornarei sua mensagem.
+          </h2>
+
+          <a class="botao" href="index.html">Voltar para o Início</a>
+        </article>
+      </section>
+    </main>
+
+    <!-- Rodapé da Página (footer) -->
+    <footer>Desenvolvido por Daniel Nascimento - 2026</footer>
+  </body>
 </html>

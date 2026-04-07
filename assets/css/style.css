@@ -9,74 +9,82 @@
   outline: none;
 }
 
-  /* Variáveis */
+
+#particle-canvas {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100vw; 
+  height: 100vh;
+  z-index: -1; 
+  pointer-events: none; 
+  background-color: var(--bg-primary); 
+}
+
+
 :root {
-  /* Nova Paleta - Azul Escuro e Verde Teal (Tech) */
-  --brand-50: #f0fdfa;
-  --brand-100: #ccfbf1;
-  --brand-200: #99f6e4;
-  --brand-300: #5eead4;
-  --brand-400: #2dd4bf;
-  --brand-500: #14b8a6; /* Teal (Verde/Azul) - Cor principal de destaque */
-  --brand-600: #0d9488;
-  --brand-800: #0f172a; /* Slate - Azul muito escuro para Header/Footer */
-  --brand-900: #020617; 
+  /* Cores de Fundo */
+  --bg-primary: #0a0a0a; 
+  --bg-glass: rgba(15, 23, 42, 0.4); 
+  
+  
+  --brand-neon: #2dd4bf; 
+  --brand-purple: #8b5cf6; 
+  --brand-glow: 0 0 15px rgba(45, 212, 191, 0.4);
+  --purple-glow: 0 0 15px rgba(139, 92, 246, 0.4);
 
-  /* Cores Neutras */
-  --gray-200: #e2e8f0;
-  --gray-400: #64748b;
-  --black: #1e293b; /* Texto um pouco mais suave que o preto puro */
-  --white: #f8fafc; /* Fundo levemente acinzentado, cansa menos a vista */
-
-  /* Cores de Estado */
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
   --error: #ef4444;
 
-  /* Sombras Modernas (mais suaves) */
-  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  --shadow-md: 0 10px 20px rgba(0,0,0,0.05), 0 6px 6px rgba(0,0,0,0.07);
-  --shadow-lg: 0 14px 28px rgba(0,0,0,0.08), 0 10px 10px rgba(0,0,0,0.08);
-
-  /* Espaçamentos (Mantidos iguais) */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
-
-  /* Tamanhos de Fonte (Mantidos iguais) */
-  --text-sm: 0.75rem;
-  --text-base: 1rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
-  --text-2xl: 2rem;
-  --text-3xl: 2.5rem;
-
-  /* Border Radius - Mais "afiados" para visual Tech */
-  --radius-sm: 0.25rem;
-  --radius-md: 0.375rem;
-  --radius-lg: 0.5rem;
-  --radius-xl: 1rem;
-  --radius-full: 50%;
-
-  /* Animação Padrão */
+  --spacing-xs: 0.5rem; --spacing-sm: 1rem; --spacing-md: 1.5rem;
+  --spacing-lg: 2rem; --spacing-xl: 3rem; --spacing-2xl: 4rem;
+  --text-sm: 0.75rem; --text-base: 1rem; --text-lg: 1.25rem;
+  --text-xl: 1.5rem; --text-2xl: 2rem; --text-3xl: 2.5rem;
+  --radius-sm: 0.25rem; --radius-md: 0.375rem; --radius-lg: 0.5rem;
+  --radius-xl: 1rem; --radius-full: 50%;
   --transition-default: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
+  --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.8);
 }
 
-/* Configurações Básicas */
-
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: var(--white);
+  background-color: var(--bg-primary); 
   line-height: 1.6;
-  color: var(--black);
+  color: var(--text-main);
+  overflow-x: hidden;
+}
+
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+main { flex: 1; }
+
+a {
+  color: var(--brand-neon);
+  transition: var(--transition-default);
+}
+
+/* --- TÍTULOS E DESTAQUES --- */
+h1, h2, h3 {
+  color: var(--brand-neon); 
+  text-shadow: var(--brand-glow); 
+}
+
+strong {
+  color: var(--brand-neon); 
 }
 
 main {
@@ -92,6 +100,7 @@ main {
   scroll-margin-top: 6rem;
 }
 
+
 /* Botões */
 
 .buttons-container {
@@ -103,42 +112,42 @@ main {
 .botao-outline {
   display: inline-block;
   padding: 0.75rem 2rem;
-  border: 0.15rem solid transparent;
+  border: 1px solid transparent;
   border-radius: var(--radius-md);
   font-size: var(--text-base);
   font-weight: 600;
   text-align: center;
   cursor: pointer;
   transition: var(--transition-default);
-}
-
-.botao {
-  border-color: var(--brand-500);
-  background-color: var(--brand-500);
-  color: #fff;
-  text-transform: uppercase; /* Deixa a letra maiúscula */
-  letter-spacing: 1px; /* Espaço mais elegante entre letras */
-}
-
-.botao:hover {
-  border-color: var(--brand-600);
-  background-color: var(--brand-600);
-  box-shadow: var(--shadow-md);
-  transform: translateY(-0.15rem);
-}
-
-.botao-outline {
-  border-color: var(--brand-500);
-  background-color: transparent;
-  color: var(--brand-600);
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
+.botao {
+background-color: rgba(45, 212, 191, 0.1);
+  border-color: var(--brand-neon);
+  color: var(--brand-neon);
+  box-shadow: var(--brand-glow);
+}
+
+.botao:hover {
+  background-color: var(--brand-neon);
+  color: var(--bg-primary);
+  box-shadow: 0 0 25px var(--brand-neon);
+  transform: translateY(-3px);
+}
+
+.botao-outline {
+  border-color: var(--brand-purple);
+  color: var(--brand-purple);
+  box-shadow: var(--purple-glow);
+}
+
 .botao-outline:hover {
-  background-color: var(--brand-50);
-  color: var(--brand-700);
-  transform: translateY(-0.15rem);
+  background-color: var(--brand-purple);
+  color: var(--text-main);
+  box-shadow: 0 0 25px var(--brand-purple);
+  transform: translateY(-3px);
 }
 
 /* Botões pequenos - Card Projetos */
@@ -160,8 +169,11 @@ header {
   z-index: 1000;
   width: 100%;
   height: 5rem;
-  border-bottom: 2px solid var(--brand-500); /* Linha de destaque embaixo do menu */  box-shadow: var(--shadow-sm);
-  background-color: var(--brand-800); /* Fica um azul quase preto, muito chique */}
+  background-color: var(--bg-glass); 
+  backdrop-filter: blur(12px); 
+  border-bottom: 1px solid rgba(45, 212, 191, 0.2);
+  box-shadow: var(--shadow-sm);
+}
 
 header a {
   font-weight: 600;
@@ -170,9 +182,9 @@ header a {
 }
 
 header a:hover {
-  color: var(--brand-300);
+  color: var(--brand-neon);
+  text-shadow: var(--brand-glow);
 }
-
 
 #titulo {
   font-size: var(--text-2xl);
@@ -228,16 +240,16 @@ header a:hover {
 .hero-content p,
 .about-content p,
 .contact-info p {
-  font-size: var(--text-lg);
-  color: var(--gray-400);
+ font-size: var(--text-lg);
+  color: var(--text-muted); 
 }
 
 .hero-content p strong,
 .about-content p strong,
 .contact-info p strong {
-  color: var(--brand-500);
-  font-weight: 700;
+ color: var(--brand-neon);
 }
+
 
 .hero-image {
   display: flex;
@@ -276,7 +288,10 @@ header a:hover {
   gap: var(--spacing-2xl);
   margin: var(--spacing-2xl) auto;
   border-radius: var(--radius-lg);
-  background-color: var(--gray-200);
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: var(--shadow-lg);
 }
 
 .about-image {
@@ -284,19 +299,19 @@ header a:hover {
 }
 
 .about-image img {
-  width: 100%;
-  border: 0.35rem solid var(--purple-500);
+width: 100%;
+  border: 0.35rem solid var(--brand-neon);
   border-radius: var(--radius-full);
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--brand-glow); 
 }
 
 .about-content h2,
 .projects-container h2,
 .contact-info h2 {
-  margin-bottom: var(--spacing-md);
+margin-bottom: var(--spacing-md);
   font-size: var(--text-3xl);
-  font-weight: 800; /* Mais grosso */
-  color: var(--brand-800);
+  font-weight: 700;
+  color: var(--brand-neon); 
 }
 
 .about-content p {
@@ -329,16 +344,16 @@ header a:hover {
 }
 
 .data-number {
-  font-size: var(--text-2xl); /* Números do GitHub maiores */
-  font-weight: 800;
+font-size: var(--text-xl);
+  font-weight: 700;
   text-align: center;
-  color: var(--brand-500);
+  color: var(--brand-neon); 
 }
 
 .data-label {
-  font-size: var(--text-base);
+font-size: var(--text-base);
   text-align: center;
-  color: var(--gray-400);
+  color: var(--text-muted); 
 }
 
 /* Projects */
@@ -359,28 +374,33 @@ header a:hover {
 /* Card Projetos */
 
 .project-card {
-  /* ... mantenha o resto igual ... */
-  border: 1px solid var(--gray-200);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
   border-radius: var(--radius-lg);
-  background-color: #fff;
+  background-color: var(--bg-glass); 
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: var(--shadow-sm);
+  overflow: hidden;
   transition: var(--transition-default);
 }
 
 .project-card:hover {
-  box-shadow: var(--shadow-lg);
-  transform: translateY(-5px); /* O card sobe um pouquinho quando passa o mouse */
+border-color: var(--brand-neon);
+  box-shadow: var(--brand-glow);
+  transform: translateY(-5px);
 }
 
 .project-image {
-  display: flex;
+display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 10rem;
-  /* Novo fundo para a imagem do projeto - Padrão escuro com borda verde */
-  background-color: var(--brand-800);
-  border-bottom: 3px solid var(--brand-500);
+  background-color: rgba(0,0,0,0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .project-image img {
@@ -407,10 +427,10 @@ header a:hover {
 }
 
 .project-content p {
-  flex: 1;
+flex: 1;
   margin-bottom: var(--spacing-sm);
   font-size: var(--text-base);
-  color: var(--gray-400);
+  color: var(--text-muted);
 }
 
 .project-tags {
@@ -420,13 +440,13 @@ header a:hover {
 }
 
 .tag {
-  padding: 0.375rem 0.75rem;
+padding: 0.375rem 0.75rem;
   border-radius: var(--radius-sm);
-  background-color: var(--brand-50);
-  border: 1px solid var(--brand-200); /* Bordinha sutil na tag */
+  background-color: rgba(45, 212, 191, 0.1); 
+  border: 1px solid var(--brand-neon); 
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--brand-700);
+  color: var(--brand-neon);
 }
 
 .project-buttons {
@@ -457,8 +477,8 @@ header a:hover {
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: var(--text-lg);
-  color: var(--brand-500);
+ font-size: var(--text-lg);
+  color: var(--brand-neon);
 }
 
 .swiper-button-next:hover:after,
@@ -468,14 +488,12 @@ header a:hover {
 
 /* Indicadores de paginação */
 .swiper-pagination-bullet {
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: var(--gray-200);
-  opacity: 1;
+ background-color: var(--text-muted);
 }
 
 .swiper-pagination-bullet-active {
-  background-color: var(--brand-500);
+ background-color: var(--brand-neon);
+  box-shadow: var(--brand-glow);
 }
 
 /* Seção de Contato */
@@ -486,39 +504,54 @@ header a:hover {
   gap: var(--spacing-2xl);
 }
 
+
 /* Redes Sociais */
 
 .contact-info h2 {
   margin-bottom: var(--spacing-md);
+  color: var(--brand-neon); 
 }
 
 .contact-info p {
   margin-bottom: var(--spacing-lg);
+  color: var(--text-muted);
 }
 
 .social-container {
   display: flex;
-  justify-content: center;
-  gap: var(--spacing-xl);
+  justify-content: flex-start; 
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-md);
 }
 
 .social-icon {
-  width: 5rem;
-  height: 5rem;
-  padding: 0.75rem;
-  border-radius: var(--radius-md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: var(--radius-full); 
+  background-color: rgba(45, 212, 191, 0.05); 
+  border: 1px solid rgba(45, 212, 191, 0.3); 
   transition: var(--transition-default);
 }
 
 .social-icon img {
-  width: 100%;
-  filter: brightness(0) saturate(100%);
-  transition: filter 0.3s ease;
+  width: 50%; 
+  filter: brightness(0) invert(1) opacity(0.8); 
+  transition: var(--transition-default);
 }
 
-.social-icon img:hover {
-  filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1352%)
-    hue-rotate(243deg) brightness(79%) contrast(91%);
+/* Efeito Hover (Quando passa o rato) */
+.social-icon:hover {
+  background-color: var(--brand-neon);
+  border-color: var(--brand-neon);
+  box-shadow: 0 0 20px var(--brand-neon); 
+  transform: translateY(-5px); 
+}
+
+.social-icon:hover img {
+  filter: brightness(0); 
 }
 
 /* Formulário de Contato */
@@ -537,8 +570,10 @@ form label {
 form input,
 form textarea {
   width: 100%;
-  padding: 0.5rem var(--spacing-sm);
-  border: 0.25rem solid var(--gray-200);
+  padding: 0.75rem var(--spacing-sm);
+  background-color: rgba(15, 23, 42, 0.6);
+  color: var(--text-main); 
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: var(--radius-md);
   font-family: inherit;
   font-size: var(--text-base);
@@ -547,7 +582,8 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-  border-color: var(--purple-500);
+  border-color: var(--brand-neon);
+  box-shadow: 0 0 15px rgba(45, 212, 191, 0.2);
   outline: none;
 }
 
@@ -566,10 +602,12 @@ form span {
 
 footer {
   padding: 2.5rem;
-  background: linear-gradient(to right, var(--purple-500), var(--purple-800));
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(45, 212, 191, 0.2);
   font-weight: 600;
   text-align: center;
-  color: var(--white);
+  color: var(--text-muted);
 }
 
 /* Página Success */
@@ -713,17 +751,9 @@ footer {
   }
 
   .about-image img {
+    max-width: 16rem;
     width: 100%;
-  border: 0.35rem solid var(--brand-500); /* Borda verde na sua foto */
-  border-radius: var(--radius-full);
-  box-shadow: var(--shadow-lg);
   }
-  form input:focus,
-form textarea:focus {
-  border-color: var(--brand-500);
-  box-shadow: 0 0 0 3px var(--brand-100); /* Efeito de "glow" ao clicar no input */
-  outline: none;
-}
 
   .about-content {
     width: 100%;
@@ -760,6 +790,8 @@ form textarea:focus {
     min-height: 30rem;
     max-height: 30rem;
     max-width: 100%;
+    background-color: var(--bg-card);
+    border: 1px solid rgba(45, 212, 191, 0.2); 
   }
 
   .project-content {
@@ -975,14 +1007,13 @@ form textarea:focus {
   }
 
   .social-container {
-    flex-wrap: wrap;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xs);
+    justify-content: center;
+    gap: var(--spacing-md);
   }
 
   .social-icon {
-    width: 4rem;
-    height: 4rem;
+    width: 3.5rem;
+    height: 3.5rem;
   }
 
   /* Formulário */

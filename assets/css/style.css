@@ -9,36 +9,34 @@
   outline: none;
 }
 
-/* Variáveis */
+  /* Variáveis */
 :root {
-  /* Paleta de Cores - Purple */
-  --purple-50: #f4eaff;
-  --purple-100: #e9dcfa;
-  --purple-200: #cdb3f0;
-  --purple-300: #b186e5;
-  --purple-400: #9460db;
-  --purple-500: #6b36c8;
-  --purple-600: #5b2ca0;
-  --purple-700: #4c2177;
-  --purple-800: #441f88;
-  --purple-900: #2a0e4d;
-  --purple-950: #1a0730;
+  /* Nova Paleta - Azul Escuro e Verde Teal (Tech) */
+  --brand-50: #f0fdfa;
+  --brand-100: #ccfbf1;
+  --brand-200: #99f6e4;
+  --brand-300: #5eead4;
+  --brand-400: #2dd4bf;
+  --brand-500: #14b8a6; /* Teal (Verde/Azul) - Cor principal de destaque */
+  --brand-600: #0d9488;
+  --brand-800: #0f172a; /* Slate - Azul muito escuro para Header/Footer */
+  --brand-900: #020617; 
 
   /* Cores Neutras */
-  --gray-200: #e8e8e8;
-  --gray-400: #505861;
-  --black: #171717;
-  --white: #faf7ff;
+  --gray-200: #e2e8f0;
+  --gray-400: #64748b;
+  --black: #1e293b; /* Texto um pouco mais suave que o preto puro */
+  --white: #f8fafc; /* Fundo levemente acinzentado, cansa menos a vista */
 
   /* Cores de Estado */
-  --error: #e63946;
+  --error: #ef4444;
 
-  /* Sombras */
-  --shadow-sm: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 0.25rem 0.75rem rgba(107, 54, 200, 0.3);
-  --shadow-lg: 0 0.5rem 1.5rem rgba(107, 54, 200, 0.2);
+  /* Sombras Modernas (mais suaves) */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  --shadow-md: 0 10px 20px rgba(0,0,0,0.05), 0 6px 6px rgba(0,0,0,0.07);
+  --shadow-lg: 0 14px 28px rgba(0,0,0,0.08), 0 10px 10px rgba(0,0,0,0.08);
 
-  /* Espaçamentos */
+  /* Espaçamentos (Mantidos iguais) */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -46,7 +44,7 @@
   --spacing-xl: 3rem;
   --spacing-2xl: 4rem;
 
-  /* Tamanhos de Fonte */
+  /* Tamanhos de Fonte (Mantidos iguais) */
   --text-sm: 0.75rem;
   --text-base: 1rem;
   --text-lg: 1.25rem;
@@ -54,15 +52,16 @@
   --text-2xl: 2rem;
   --text-3xl: 2.5rem;
 
-  /* Border Radius */
+  /* Border Radius - Mais "afiados" para visual Tech */
   --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 1rem;
-  --radius-xl: 2rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 1rem;
   --radius-full: 50%;
 
   /* Animação Padrão */
-  --transition-default: all 0.3s ease;
+  --transition-default: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+
 }
 
 /* Configurações Básicas */
@@ -114,29 +113,32 @@ main {
 }
 
 .botao {
-  border-color: var(--purple-500);
-  background-color: var(--purple-500);
-  color: var(--white);
+  border-color: var(--brand-500);
+  background-color: var(--brand-500);
+  color: #fff;
+  text-transform: uppercase; /* Deixa a letra maiúscula */
+  letter-spacing: 1px; /* Espaço mais elegante entre letras */
 }
 
 .botao:hover {
-  border-color: var(--purple-800);
-  background-color: var(--purple-800);
+  border-color: var(--brand-600);
+  background-color: var(--brand-600);
   box-shadow: var(--shadow-md);
-  transform: translateY(-0.25rem);
+  transform: translateY(-0.15rem);
 }
 
 .botao-outline {
-  border-color: var(--purple-500);
+  border-color: var(--brand-500);
   background-color: transparent;
-  color: var(--purple-500);
+  color: var(--brand-600);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .botao-outline:hover {
-  border-color: var(--purple-500);
-  background-color: var(--purple-500);
-  color: var(--white);
-  transform: translateY(-0.25rem);
+  background-color: var(--brand-50);
+  color: var(--brand-700);
+  transform: translateY(-0.15rem);
 }
 
 /* Botões pequenos - Card Projetos */
@@ -158,10 +160,8 @@ header {
   z-index: 1000;
   width: 100%;
   height: 5rem;
-  border-bottom: var(--spacing-xs) solid var(--gray-200);
-  box-shadow: var(--shadow-sm);
-  background-color: var(--purple-800);
-}
+  border-bottom: 2px solid var(--brand-500); /* Linha de destaque embaixo do menu */  box-shadow: var(--shadow-sm);
+  background-color: var(--brand-800); /* Fica um azul quase preto, muito chique */}
 
 header a {
   font-weight: 600;
@@ -170,8 +170,9 @@ header a {
 }
 
 header a:hover {
-  color: var(--purple-100);
+  color: var(--brand-300);
 }
+
 
 #titulo {
   font-size: var(--text-2xl);
@@ -231,6 +232,13 @@ header a:hover {
   color: var(--gray-400);
 }
 
+.hero-content p strong,
+.about-content p strong,
+.contact-info p strong {
+  color: var(--brand-500);
+  font-weight: 700;
+}
+
 .hero-image {
   display: flex;
   flex: 1;
@@ -259,6 +267,7 @@ header a:hover {
 .float-animation {
   animation: float 3s ease-in-out infinite;
 }
+
 /* About */
 
 .about-container {
@@ -286,8 +295,8 @@ header a:hover {
 .contact-info h2 {
   margin-bottom: var(--spacing-md);
   font-size: var(--text-3xl);
-  font-weight: 700;
-  color: var(--purple-800);
+  font-weight: 800; /* Mais grosso */
+  color: var(--brand-800);
 }
 
 .about-content p {
@@ -320,10 +329,10 @@ header a:hover {
 }
 
 .data-number {
-  font-size: var(--text-xl);
-  font-weight: 700;
+  font-size: var(--text-2xl); /* Números do GitHub maiores */
+  font-weight: 800;
   text-align: center;
-  color: var(--purple-500);
+  color: var(--brand-500);
 }
 
 .data-label {
@@ -332,23 +341,35 @@ header a:hover {
   color: var(--gray-400);
 }
 
+/* Projects */
+
+.projects-container {
+  scroll-margin-top: 3rem;
+  margin: var(--spacing-2xl) auto;
+  text-align: center;
+}
+
+.projects-swiper {
+  position: relative;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-xl) var(--spacing-xl);
+  overflow: hidden;
+}
+
 /* Card Projetos */
 
 .project-card {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-  border: 0.15rem solid var(--gray-200);
+  /* ... mantenha o resto igual ... */
+  border: 1px solid var(--gray-200);
   border-radius: var(--radius-lg);
-  background-color: var(--white);
+  background-color: #fff;
   box-shadow: var(--shadow-sm);
-  overflow: hidden;
   transition: var(--transition-default);
 }
 
 .project-card:hover {
   box-shadow: var(--shadow-lg);
+  transform: translateY(-5px); /* O card sobe um pouquinho quando passa o mouse */
 }
 
 .project-image {
@@ -357,11 +378,9 @@ header a:hover {
   align-items: center;
   width: 100%;
   height: 10rem;
-  background: linear-gradient(
-    135deg,
-    var(--purple-50) 0%,
-    var(--purple-100) 100%
-  );
+  /* Novo fundo para a imagem do projeto - Padrão escuro com borda verde */
+  background-color: var(--brand-800);
+  border-bottom: 3px solid var(--brand-500);
 }
 
 .project-image img {
@@ -403,10 +422,11 @@ header a:hover {
 .tag {
   padding: 0.375rem 0.75rem;
   border-radius: var(--radius-sm);
-  background-color: var(--purple-100);
+  background-color: var(--brand-50);
+  border: 1px solid var(--brand-200); /* Bordinha sutil na tag */
   font-size: var(--text-sm);
   font-weight: 600;
-  color: var(--purple-800);
+  color: var(--brand-700);
 }
 
 .project-buttons {
@@ -427,6 +447,7 @@ header a:hover {
   display: flex;
   height: auto;
 }
+
 /* Botões do Swiper (navegação) */
 .swiper-button-next,
 .swiper-button-prev {
@@ -437,13 +458,14 @@ header a:hover {
 .swiper-button-next:after,
 .swiper-button-prev:after {
   font-size: var(--text-lg);
-  color: var(--purple-500);
+  color: var(--brand-500);
 }
 
 .swiper-button-next:hover:after,
 .swiper-button-prev:hover:after {
   color: var(--purple-800);
 }
+
 /* Indicadores de paginação */
 .swiper-pagination-bullet {
   width: 0.75rem;
@@ -453,9 +475,7 @@ header a:hover {
 }
 
 .swiper-pagination-bullet-active {
-  width: var(--spacing-lg);
-  border-radius: var(--radius-sm);
-  background-color: var(--purple-500);
+  background-color: var(--brand-500);
 }
 
 /* Seção de Contato */
@@ -465,6 +485,7 @@ header a:hover {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-2xl);
 }
+
 /* Redes Sociais */
 
 .contact-info h2 {
@@ -499,6 +520,7 @@ header a:hover {
   filter: brightness(0) saturate(100%) invert(42%) sepia(93%) saturate(1352%)
     hue-rotate(243deg) brightness(79%) contrast(91%);
 }
+
 /* Formulário de Contato */
 
 form {
@@ -538,15 +560,6 @@ form span {
   margin-top: -0.75rem;
   font-size: var(--text-sm);
   color: var(--error);
-}
-/* Footer */
-
-footer {
-  padding: 2.5rem;
-  background: linear-gradient(to right, var(--purple-500), var(--purple-800));
-  font-weight: 600;
-  text-align: center;
-  color: var(--white);
 }
 
 /* Footer */
@@ -606,23 +619,56 @@ footer {
   height: 6rem;
   filter: brightness(0) saturate(100%) invert(11%) sepia(69%) saturate(3759%)
     hue-rotate(256deg) brightness(101%) contrast(96%);
-
 }
 
-/* Responsividade Tablet */
+/* ========================================
+   RESPONSIVIDADE - TABLETS (até 1024px)
+======================================== */
 
-@media screen and (max-width: 1024px){
-  
+@media screen and (max-width: 1024px) {
+  /* Layout */
   .section-container {
     padding: var(--spacing-lg) var(--spacing-md);
   }
 
+  /* Tipografia */
+  .section-container h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .section-container h2 {
+    font-size: var(--text-2xl);
+  }
+
+  .section-container p {
+    font-size: var(--text-base);
+  }
+
+  .section-container span {
+    font-size: var(--text-lg);
+  }
+
+  .success-content h1 {
+    font-size: var(--text-3xl);
+  }
+
+  .success-content h2 {
+    font-size: var(--text-lg);
+  }
+
+  /* Header */
+  #titulo {
+    font-size: var(--text-xl);
+  }
+
+  /* Header - Oculta menu em telas pequenas */
   @media (max-width: 768px) {
     .menu-list {
       display: none;
     }
   }
 
+  /* Hero */
   .hero-container {
     flex-direction: column-reverse;
     gap: var(--spacing-lg);
@@ -651,6 +697,7 @@ footer {
     white-space: nowrap;
   }
 
+  /* About */
   .about-container {
     flex-direction: column;
     gap: var(--spacing-md);
@@ -659,16 +706,24 @@ footer {
   }
 
   .about-image {
-    display: flex;
     flex: 0 0 auto;
     width: 100%;
+    display: flex;
     justify-content: center;
   }
 
-  .about-image img{
-    max-width: 16rem;
+  .about-image img {
     width: 100%;
+  border: 0.35rem solid var(--brand-500); /* Borda verde na sua foto */
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-lg);
   }
+  form input:focus,
+form textarea:focus {
+  border-color: var(--brand-500);
+  box-shadow: 0 0 0 3px var(--brand-100); /* Efeito de "glow" ao clicar no input */
+  outline: none;
+}
 
   .about-content {
     width: 100%;
@@ -689,6 +744,58 @@ footer {
     width: 100%;
   }
 
+  /* Projects */
+  .projects-container {
+    margin: var(--spacing-lg) auto 0;
+  }
+
+  .projects-swiper {
+    margin: 0;
+    padding: var(--spacing-sm) var(--spacing-lg) 2.5rem;
+  }
+
+  .project-card {
+    width: 100%;
+    height: 30rem;
+    min-height: 30rem;
+    max-height: 30rem;
+    max-width: 100%;
+  }
+
+  .project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .project-content p {
+    flex: 1;
+    overflow: hidden;
+  }
+
+  .project-tags {
+    min-height: 2.5rem;
+    align-items: flex-start;
+  }
+
+  .swiper-wrapper {
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    height: auto;
+  }
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+  }
+
+  /* Contact */
   .contact-container {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
@@ -696,6 +803,7 @@ footer {
     margin: 0 auto;
   }
 
+  /* Success Page */
   .success-container {
     padding: var(--spacing-xl) var(--spacing-md);
     min-height: calc(100vh - 10rem);
@@ -706,31 +814,34 @@ footer {
     max-width: 35rem;
   }
 
-  .success-image {
+  .success-icon {
     width: 6rem;
     height: 6rem;
   }
 
-  .success-image img {
+  .success-icon img {
     width: 5rem;
     height: 5rem;
   }
-
 }
 
-/* Responsividade - Celular */
+/* ========================================
+   RESPONSIVIDADE - MOBILE (até 480px)
+======================================== */
 
 @media screen and (max-width: 480px) {
+  /* Layout */
   .section-container {
     padding: var(--spacing-md) var(--spacing-sm);
   }
 
+  /* Tipografia Mobile */
   .section-container h1 {
     font-size: var(--text-xl);
   }
 
   .section-container h2 {
-    font-size: var(--text-lg);
+    font-size: var(--text-xl);
   }
 
   .section-container p {
@@ -741,22 +852,26 @@ footer {
     font-size: var(--text-lg);
   }
 
-  #titulo {
+  .success-content h1 {
     font-size: var(--text-xl);
   }
 
-  .menu-content {
-    justify-content: center;
+  .success-content h2 {
+    font-size: var(--text-base);
+  }
+
+  /* Header */
+  #titulo {
+    font-size: var(--text-xl);
   }
 
   .menu-list {
     display: none;
   }
 
+  /* Hero */
   .hero-container {
-    flex-direction: column-reverse;
-    gap: var(--spacing-xs);
-    min-height: 60vh;
+    gap: var(--spacing-sm);
   }
 
   .hero-content {
@@ -772,6 +887,11 @@ footer {
 
   .buttons-container .botao,
   .buttons-container .botao-outline {
+    width: 100%;
+  }
+
+  .hero-container .botao,
+  .hero-container .botao-outline {
     padding: 0.75rem 1rem;
     font-size: var(--text-base);
     white-space: nowrap;
@@ -785,24 +905,14 @@ footer {
     max-width: 20rem;
   }
 
+  /* About */
   .about-container {
-    flex-direction: column;
     margin: var(--spacing-lg) 0.5rem;
     padding: var(--spacing-md);
   }
 
   .about-image img {
-    max-width: 16rem;
-  }
-
-  .about-content {
-    width: 100%;
-  }
-
-  .about-buttons-data {
-    flex-direction: column;
-    gap: var(--spacing-md);
-    align-items: stretch;
+    max-width: 14rem;
   }
 
   .about-buttons-data .botao,
@@ -813,11 +923,6 @@ footer {
     text-align: center;
   }
 
-  .data-container {
-    justify-content: center;
-    width: 100%;
-  }
-
   .data-number {
     font-size: var(--text-lg);
   }
@@ -826,18 +931,111 @@ footer {
     font-size: var(--text-sm);
   }
 
+  /* Projects */
+  .projects-container {
+    margin: var(--spacing-lg) auto 0;
+  }
+
+  .projects-swiper {
+    position: relative;
+    margin: 0;
+    padding: var(--spacing-sm) 0 2rem 0;
+    overflow: visible;
+  }
+
+  .project-card {
+    width: 100%;
+    height: 20rem;
+    max-width: 20rem;
+  }
+
+  .project-image {
+    height: 10rem;
+  }
+
+  .project-content {
+    padding: var(--spacing-md);
+  }
+
+  .project-content h3 {
+    font-size: var(--text-lg);
+  }
+
+  .project-content p {
+    font-size: var(--text-base);
+  }
+
+  /* Contact */
   .contact-container {
-    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .contact-info p {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .social-container {
+    flex-wrap: wrap;
     gap: var(--spacing-lg);
-    width: 100%;
-    margin: 0 auto;
+    margin-bottom: var(--spacing-xs);
   }
 
-  .contact-info {
-    width: 100%;
+  .social-icon {
+    width: 4rem;
+    height: 4rem;
   }
 
+  /* Formulário */
   form {
+    gap: var(--spacing-sm);
+  }
+
+  form label {
+    font-size: var(--text-base);
+  }
+
+  form input,
+  form textarea {
+    padding: 0.75rem;
+    font-size: var(--text-base);
+  }
+
+  form button {
+    padding: 0.75rem var(--spacing-md);
+    font-size: var(--text-base);
+  }
+
+  /* Footer */
+  footer {
+    padding: var(--spacing-md) var(--spacing-sm);
+    font-size: var(--text-sm);
+  }
+
+  /* Success Page */
+  .success-container {
+    padding: var(--spacing-lg) var(--spacing-sm);
+    min-height: calc(100vh - 8rem);
+  }
+
+  .success-content {
+    gap: var(--spacing-md);
+    max-width: 100%;
+    padding: 0 var(--spacing-sm);
+  }
+
+  .success-icon {
+    width: 5rem;
+    height: 5rem;
+  }
+
+  .success-icon img {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .success-content .botao {
     width: 100%;
+    max-width: 20rem;
+    padding: 0.75rem var(--spacing-lg);
   }
 }

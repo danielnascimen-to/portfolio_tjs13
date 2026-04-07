@@ -25,6 +25,12 @@
 
     <link rel="icon" type="image/svg+xml" href="./assets/img/favicon.svg" />
 
+    <!-- SWIPER CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <!-- CSS principal da página -->
 
     <link rel="stylesheet" href="./assets/css/style.css" />
@@ -78,7 +84,7 @@
 
         <figure class="hero-image">
           <img
-            src="./assets/img/foto_dev_man.svg"
+            src="./assets/img/dandev.png"
             alt="Foto do autor do site"
             class="float-animation"
           />
@@ -87,60 +93,7 @@
 
       <!-- Seção About -->
 
-      <section id="about" class="section-container about-container">
-        <!-- Imagem da Seção About -->
-
-        <figure class="about-image">
-          <img
-            src="./assets/img/avatar_dev_man.svg"
-            alt="Foto do perfil do autor"
-          />
-        </figure>
-
-        <!-- Conteúdo da Seção About -->
-
-        <article class="about-content">
-          <h2>Sobre mim</h2>
-          <p>
-            Desenvolvedor Full Stack em formação e estudante de Sistemas de
-            Informação. Com experiência prévia em Suporte Técnico e
-            infraestrutura, trago para o desenvolvimento de software uma visão
-            prática sobre estabilidade de sistemas e usabilidade. Atualmente,
-            foco meu aprendizado no ecossistema JavaScript (Node.js/React) e
-            Java, participando de projetos práticos que envolvem desde a
-            modelagem de bancos de dados até a criação de interfaces
-            responsivas. Sou apaixonado por aprender novas tecnologias e
-            resolver desafios que unam eficiência técnica e valor de negócio.
-          </p>
-          <p></p>
-
-          <!-- Links (GitHub + Curriculo) e Dados do GitHub -->
-
-          <div class="about-buttons-data">
-            <div class="buttons-container">
-              <a href="#" target="_blank" class="botao">GitHub</a>
-              <a href="#" target="_blank" class="botao-outline">Currículo</a>
-            </div>
-            <!-- Links -->
-
-            <div class="data-container">
-              <!-- Nº de Seguidores -->
-
-              <div class="data-item">
-                <span class="data-number">100</span>
-                <span class="data-label">Seguidores</span>
-              </div>
-
-              <!-- Nº de Repositórios Públicos -->
-
-              <div class="data-item">
-                <span class="data-number">10</span>
-                <span class="data-label">Repositórios</span>
-              </div>
-            </div>
-          </div>
-        </article>
-      </section>
+      <section id="about" class="section-container about-container"></section>
 
       <!-- Seção Projects -->
 
@@ -247,7 +200,11 @@
 
         <!-- Formulário de Contato -->
 
-        <form id="formulario">
+        <form id="formulario" action="https://formsubmit.co/bd9f90903f9a101906d402c976b946ed" method="POST">
+
+        <input type="hidden" name="_next" value="http://127.0.0.1:5501/success.html">
+        <input type="hidden" name="_captcha" value="false">
+
           <label for="nome">Nome</label>
           <input
             id="nome"
@@ -291,6 +248,9 @@
     <!-- Rodapé da página -->
 
     <footer>Desenvolvido por Daniel Nascimento - 2026</footer>
+
+    <!-- SWIPER JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Script JavaScript principal da Página-->
     <script src="./assets/js/script.js"></script>

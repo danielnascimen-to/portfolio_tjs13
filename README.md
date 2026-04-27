@@ -80,7 +80,7 @@ Para executar o projeto em ambiente local, siga os passos abaixo.
 1. Clone o repositório:
  
    ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
+   git clone https://github.com/danielnascimen-to/portfolio_tjs13
    ```
  
 2. Acesse a pasta do projeto:
@@ -105,7 +105,7 @@ O site será aberto no navegador e todas as alterações poderão ser visualizad
  
 Este site está disponível publicamente através do **GitHub Pages**. Você pode acessar a versão online pelo link abaixo:
  
-🔗 https://seu-usuario.github.io/seu-repositorio
+🔗 https://github.com/danielnascimen-to/portfolio_tjs13
  
 ------
  

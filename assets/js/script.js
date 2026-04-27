@@ -15,7 +15,7 @@ async function getAboutGitHub() {
     try {
         // Requisição do tipo GET para a API do GitHub
         const resposta = await fetch(
-            'https://api.github.com/users/DNasciment0',
+            'https://api.github.com/users/danielnascimen-to',
         )
 
         // Converter a Resposta para JSON
@@ -39,7 +39,7 @@ async function getAboutGitHub() {
          <article class="about-content">
         <h2>Sobre mim</h2>
         <p>
-          Olá! Sou o <strong>Daniel Nascimento</strong>, estudante de <strong>Sistemas de Informação (6º período)</strong> e desenvolvedor Full Stack em formação pela <strong>Generation Brasil</strong>.
+          Olá! Sou  <strong>Daniel Nascimento</strong>, estudante de <strong>Sistemas de Informação (6º período)</strong> e desenvolvedor Full Stack formado pela <strong>Generation Brasil</strong>.
         </p>
         <p>
           Com 6 anos de experiência em <strong>Suporte de TI e Infraestrutura</strong>, trago uma visão prática sobre estabilidade de sistemas para o desenvolvimento moderno com <strong>TypeScript, React, Node.js e MySQL</strong>.
@@ -60,7 +60,7 @@ async function getAboutGitHub() {
           <!-- Links -->
             <div class="buttons-container">
               <a href="${perfil.html_url}" target="_blank" class="botao">GitHub</a>
-              <a href="https://drive.google.com/file/d/1dlUnpUwfEJG89kCBVVDNDKJdl5v5inyf/view?usp=sharing" target="_blank" class="botao-outline">Currículo</a>
+              <a href="https://drive.google.com/file/d/1lRFbPLgpMwSoKqTc-dngwg4DQHs8rde4/view?usp=sharing" target="_blank" class="botao-outline">Currículo</a>
             </div>
             
 
@@ -97,7 +97,7 @@ async function getProjectsGitHub() {
     try {
         // Requisição do tipo GET para a API do GitHub
         const resposta = await fetch(
-            'https://api.github.com/users/DNasciment0/repos?sort=updated&per_page=6'
+            'https://api.github.com/users/danielnascimen-to/repos?sort=updated&per_page=6'
         );
 
         // Converter a Resposta para JSON
